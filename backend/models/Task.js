@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
 
 const taskSchema = new mongoose.Schema({
+  priority: {
+    type: String,
+    enum: ["Low", "Medium", "High"],
+    default: "Medium"
+  },
   title: {
     type: String,
     required: true,
